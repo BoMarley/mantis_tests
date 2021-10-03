@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mantis_tests", "addressbook-web-tests\mantis_tests.csproj", "{E832F579-96F8-49D2-A17A-C3493EC15859}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_data_generators", "test_data_generators\test_data_generators.csproj", "{C2465852-EC2C-4436-9017-72A877C56564}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E832F579-96F8-49D2-A17A-C3493EC15859} = {E832F579-96F8-49D2-A17A-C3493EC15859}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E832F579-96F8-49D2-A17A-C3493EC15859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E832F579-96F8-49D2-A17A-C3493EC15859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E832F579-96F8-49D2-A17A-C3493EC15859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E832F579-96F8-49D2-A17A-C3493EC15859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2465852-EC2C-4436-9017-72A877C56564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2465852-EC2C-4436-9017-72A877C56564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2465852-EC2C-4436-9017-72A877C56564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2465852-EC2C-4436-9017-72A877C56564}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40A0EF5D-BCCC-4896-883C-7D68A48A1A64}
+	EndGlobalSection
+EndGlobal
