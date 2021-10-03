@@ -63,5 +63,28 @@ namespace mantis_tests
         {
             driver.FindElement(By.XPath("//form[@id='manage-project-create-form']/div/div[3]/input")).Click();
         }
+
+        public void DeleteProcject()
+        {
+            manager.Navigator.GoToProgectManagmentMenu();
+            selectFirstProject();
+            clickDeleteProjectButton();
+            confritmDelete();
+        }
+
+        public void selectFirstProject()
+        {
+            driver.FindElement(By.CssSelector(".widget-box")).FindElement(By.CssSelector("table tbody tr")).FindElement(By.TagName("a")).Click();
+        }
+
+        public void clickDeleteProjectButton()
+        {
+            driver.FindElement(By.CssSelector("input.btn.btn-primary.btn-sm.btn-white.btn-round")).Click();
+        }
+
+        public void confritmDelete()
+        {
+            driver.FindElement(By.CssSelector("input.btn.btn-primary.btn-white.btn-round")).Click();
+        }
     }
 }
