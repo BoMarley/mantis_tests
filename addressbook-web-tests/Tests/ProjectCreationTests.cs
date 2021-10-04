@@ -12,10 +12,10 @@ namespace mantis_tests
         [Test]
         public void TestProjectCreation()
         {
-            //prepare
+            //prepare            
             app.Navigator.GoToProgectManagmentMenu();
-            List<ProjectData> oldList = app.Project.GetProjectsList();
-
+            List<ProjectData> oldList = app.API.GetAllProjects();
+            
             //actions
             ProjectData projectToCreate = new ProjectData() { Name = "Test project name" };
             ProjectData DuplicatedProjectName = oldList.Find(p => p.Name == projectToCreate.Name);
@@ -27,7 +27,7 @@ namespace mantis_tests
 
             //validation
             app.Navigator.GoToProgectManagmentMenu();
-            List<ProjectData> newList = app.Project.GetProjectsList();
+            List<ProjectData> newList = app.API.GetAllProjects();
             oldList.Add(projectToCreate);
             oldList.Sort();
             newList.Sort();
@@ -35,3 +35,4 @@ namespace mantis_tests
         }
     }
 }
+
