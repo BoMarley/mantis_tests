@@ -12,23 +12,23 @@ namespace mantis_tests
         [Test]
         public void TestProjectDelete()
         {
-            //prepare
-            app.Navigator.GoToProgectManagmentMenu();
-            List<ProjectData> oldList = app.Project.GetProjectsList();
+            //prepare            
+            List<ProjectData> oldList = app.API.GetAllProjects();
             if (oldList.Count == 0)
             {
-                ProjectData project = new ProjectData() { Name = "Delete me" };
-                app.Project.CreateProcject(project);
-                oldList = app.Project.GetProjectsList();
+                ProjectData projectToCreate = new ProjectData() { Name = "Delete me" };
+                app.API.CreateProject(projectToCreate);
+                oldList = app.API.GetAllProjects();
             }
             ProjectData projectToDelete = oldList[0];
+            app.Navigator.GoToProgectManagmentMenu();
 
             //actions
             app.Project.DeleteProcject();
 
             //validation
             app.Navigator.GoToProgectManagmentMenu();
-            List<ProjectData> newList = app.Project.GetProjectsList();
+            List<ProjectData> newList = app.API.GetAllProjects();
             oldList.Remove(projectToDelete);
             oldList.Sort();
             newList.Sort();

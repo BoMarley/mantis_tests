@@ -28,5 +28,14 @@ namespace mantis_tests
             }                        
             return projectList;
         }
+
+        public void CreateProject(ProjectData projectToCreate)
+        {
+            AccountData account = new AccountData("administrator", "password");
+            Mantis.MantisConnectPortTypeClient client = new Mantis.MantisConnectPortTypeClient();
+            Mantis.ProjectData project = new Mantis.ProjectData();
+            project.name = projectToCreate.Name;
+            client.mc_project_addAsync(account.Username, account.Password, project);
+        }
     }
 }
