@@ -22,7 +22,7 @@ namespace mantis_tests
         private ApplicationManager()
         {
             driver = new FirefoxDriver();
-            baseURL = "http://localhost/mantisbt-2.25.2/mantisbt-2.25.2";
+            baseURL = "http://localhost/mantisbt-2.25.2";
             authentificationHelper = new LoginHelper(this);
             navigationHelper = new NavigationHelper(this, baseURL);
             projectHelper = new ProjectHelper(this);

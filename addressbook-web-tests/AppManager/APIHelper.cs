@@ -12,14 +12,21 @@ namespace mantis_tests
         
         public List<ProjectData> GetAllProjects()
         {
-            List<ProjectData> allProjects = new List<ProjectData>();
             AccountData account = new AccountData("administrator", "password");
 
             Mantis.MantisConnectPortTypeClient client = new Mantis.MantisConnectPortTypeClient();
+            Mantis.ProjectData[] projectDataFromDB = client.mc_projects_get_user_accessible(account.Username, account.Password);
+
             List<ProjectData> projectList = new List<ProjectData>();
 
-            client.mc_projects_get_user_accessible(account.Username, account.Password);
-            return allProjects;
+            foreach (mantis_tests.Mantis.ProjectData p in projectDataFromDB)
+            {
+                ProjectData project = new ProjectData();
+                project.Id = p.id;
+                project.Name = p.name;
+                projectList.Add(project);
+            }                        
+            return projectList;
         }
     }
 }
